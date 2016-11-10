@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shiroiyuki.github.io/"/>
-  <updated>2016-11-10T15:37:35.532Z</updated>
+  <updated>2016-11-10T17:01:46.040Z</updated>
   <id>http://shiroiyuki.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://shiroiyuki.github.io/2016/11/11/test/"/>
+    <id>http://shiroiyuki.github.io/2016/11/11/test/</id>
+    <published>2016-11-10T17:01:45.000Z</published>
+    <updated>2016-11-10T17:01:46.040Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
