@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Hexo</title>
   
-  <link href="/Blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://shiroiyuki.github.io/Blog/"/>
+  <link href="http://shiroiyuki.github.io/"/>
   <updated>2016-11-10T15:37:35.532Z</updated>
-  <id>http://shiroiyuki.github.io/Blog/</id>
+  <id>http://shiroiyuki.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://shiroiyuki.github.io/Blog/2016/11/10/hello-world/"/>
-    <id>http://shiroiyuki.github.io/Blog/2016/11/10/hello-world/</id>
+    <link href="http://shiroiyuki.github.io/2016/11/10/hello-world/"/>
+    <id>http://shiroiyuki.github.io/2016/11/10/hello-world/</id>
     <published>2016-11-10T15:37:35.514Z</published>
     <updated>2016-11-10T15:37:35.532Z</updated>
     
