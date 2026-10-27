@@ -1,29 +1,46 @@
 # Repository Guidelines: shiroiyuki.github.io
 
-This repository hosts the personal blog for **shiroiyuki (ゆうき)**, powered by Astro and the Firefly theme with fullscreen anime wallpapers, frosted glass cards, and automated GitHub Actions deployment.
+This repository hosts the personal blog for **shiroiyuki (ゆうき)** (`https://shiroiyuki.github.io/`), built with Astro 7, Svelte 5 islands, Tailwind CSS 4, and TypeScript (customized from the Firefly theme).
 
-## Project Structure & Content Organization
+## Project Structure & Module Organization
 
-- **Blog Posts**: `src/content/posts/` (Markdown `.md` and MDX `.mdx` files).
-  - Drafts can be marked with `draft: true` in the frontmatter to prevent public deployment.
-- **Site Configurations**:
-  - `src/config/siteConfig.ts`: Site title, author profile, language, and feature toggles.
-  - `src/config/backgroundWallpaper.ts`: Wallpaper mode (`fullscreen` / `banner`), images, and blur effects.
-  - `src/config/profileConfig.ts`: Social links and author bio.
-- **Static Assets & Icons**: `public/` (contains custom `favicon.ico`, `public/favicon/` icons, and music/video assets).
-- **Core Components & Layouts**: `src/components/`, `src/layouts/`, and `src/styles/`.
+- **Main Source (`src/`)**:
+  - `src/content/posts/`: Blog posts (`.md` and `.mdx`). Set `draft: true` in frontmatter to hide unfinished posts from production builds.
+  - `src/content/dynamic/`: Timestamped micro-status updates (`.md`).
+  - `src/content/projects/`: Project showcase entries (`.md` and `.mdx`).
+  - `src/content/spec/`: Standalone page content (`about.md`, `friends.mdx`).
+  - `src/config/`: Site configuration modules (`siteConfig.ts`, `backgroundWallpaper.ts`, `profileConfig.ts`, `navBarConfig.ts`, etc.) with matching type definitions in `src/types/`. Prefer imports from `@/config` when available.
+  - `src/pages/`, `src/layouts/`, `src/components/`, `src/styles/`, `src/utils/`, `src/plugins/`: Core routing, UI components, utilities, and Markdown/Rehype/Remark plugins.
+- **Static & Managed Assets**:
+  - `public/`: Static files served directly at root (`favicon.ico`, `public/favicon/`, wallpapers, audio).
+  - `src/assets/`: Source-managed and optimized images (`src/assets/images/logo/shiroiyuki-logo.png`, wallpapers).
+- **Automation (`scripts/`)**: Build-time and authoring helper scripts (`new-post.js`, `new-dynamic.js`, `generate-lqips.ts`, `generate-github-card-data.ts`, `subset-fonts.ts`, `run-pagefind.ts`).
 
-## Key Commands (pnpm only)
+## Build, Writing, and Development Commands
 
-Always use `pnpm` (enforced by the project):
+Always use `pnpm` (enforced by `preinstall`):
 
-- `pnpm dev`: Start local Astro development server with hot-reload (`http://localhost:4321`).
-- `pnpm build`: Generate static production build into `dist/` (includes LQIPs, font subsets, and Pagefind search index).
-- `pnpm preview`: Preview production build locally.
-- `pnpm new-post`: Interactive helper to scaffold a new blog post.
+- `pnpm install`: Install dependencies.
+- `pnpm dev` / `pnpm start`: Start the local Astro dev server (`http://localhost:4321`).
+- `pnpm build`: Run full production build pipeline into `dist/` (generates GitHub card data, LQIPs, VNDB covers, Astro static build, PIO asset pruning, font subsets, inline script minification, and Pagefind search index).
+- `pnpm preview`: Preview the production `dist/` build locally.
+- `pnpm new-post <filename>`: Scaffold a new post in `src/content/posts/` (supports nested paths and auto-converts Chinese characters in `slug` to pinyin).
+- `pnpm new-d <content>` / `pnpm new-dynamic <content>`: Create a timestamped dynamic entry in `src/content/dynamic/`.
+- `pnpm check`: Run Astro diagnostics (`astro check`).
+- `pnpm type-check`: Run TypeScript check (`tsc --noEmit --isolatedDeclarations`).
+- `pnpm format`: Format `./src` and `./scripts` with Biome.
+- `pnpm lint`: Run Biome checks and safe fixes on `./src` and `./scripts`.
+- `pnpm lqips`: Regenerate Low-Quality Image Placeholders (`src/constants/lqips.json`).
+- `pnpm github-cards`: Refresh cached GitHub repository card metadata.
 
-## Deployment & Workflow
+## Coding Style & Conventions
 
-- **Branch**: `main` is the production branch.
-- **Deployment**: Any push to `main` triggers `.github/workflows/deploy.yml` which builds and deploys the site to GitHub Pages (`https://shiroiyuki.github.io/`).
-- Direct push to `main` is the preferred workflow for this personal blog.
+- **Formatter & Linter**: Biome (`biome.json`) is used for formatting and linting (tabs for indentation, double quotes for JS/TS strings).
+- **Naming**: Keep Astro and Svelte components in `PascalCase` (`PostCard.astro`, `Search.svelte`), config modules in `camelCase` ending with `Config.ts`, and utilities in `kebab-case` (`date-utils.ts`). Keep `src/types/` aligned with `src/config/`.
+- **Content Preservation**: Never delete existing posts, dynamics, or sample templates in `src/content/` unless explicitly instructed by the user.
+
+## Verification & Deployment Workflow
+
+- Before pushing significant template or config changes, verify with `pnpm check`, `pnpm type-check`, and `pnpm build`.
+- **Deployment**: `main` is the single production branch. Pushing to `main` triggers `.github/workflows/deploy.yml` (Node 24 + `pnpm`) to automatically build and deploy to GitHub Pages (`https://shiroiyuki.github.io/`).
+- Use Conventional Commits (`feat: ...`, `fix: ...`, `docs: ...`, `chore: ...`). Do not commit secrets or tokens in config files.

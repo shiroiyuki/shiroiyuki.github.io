@@ -43,7 +43,11 @@ cache/
 package/
 .obsidian/
 
-# vibe coding
+# vibe coding / AI agents (default ignore all, whitelist only rules & skills)
 .codex*
 .claude
 .mimocode
+.agent/
+.agents/*
+!.agents/rules/
+!.agents/skills/
