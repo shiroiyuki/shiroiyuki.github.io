@@ -1,27 +1,18 @@
-# 关于我 / About Me
+# 關於我 / About Me
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+歡迎來到我的個人部落格！我是 **ゆうき (shiroiyuki)**。
 
-## 🛠️ 关于本站
-
-这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly) 模板，Firefly 是基于 [Fuwari](https://github.com/saicaca/fuwari) 的二次开发。
-
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
-
-
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
-
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
-
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
-
-**⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
-
-::github{repo="CuteLeaf/Firefly"}
-
-::github{repo="saicaca/fuwari"}
+這裡是我的個人數位自留地，主要記錄技術筆記、二次元（ACG）喜好隨筆與生活心得。
 
 ---
 
-*感谢你的来访！希望在这里能找到对你有用的内容！*
+## 🛠️ 關於本站
 
+- **網站框架**：基於 [Astro](https://astro.build/) 現代化靜態網站生成器。
+- **主題設計**：採用 [Firefly](https://github.com/CuteLeaf/Firefly) 主題，配置全螢幕二次元立繪桌布與毛玻璃卡片佈局。
+- **原始碼倉庫**：[https://github.com/shiroiyuki/shiroiyuki.github.io](https://github.com/shiroiyuki/shiroiyuki.github.io)
+- **部署架構**：託管於 GitHub Pages，透過 GitHub Actions CI/CD 自動化建置與發布。
+
+---
+
+*感謝您的來訪！希望這裡能為您帶來愉快的閱讀時光。*

@@ -28,12 +28,6 @@ export const profileConfig: ProfileConfig = {
 			showName: false,
 		},
 		{
-			name: "Email",
-			icon: "fa7-solid:envelope",
-			url: "mailto:xiaye@msn.com",
-			showName: false,
-		},
-		{
 			name: "RSS",
 			icon: "fa7-solid:rss",
 			url: "/rss/",
